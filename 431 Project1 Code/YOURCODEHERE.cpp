@@ -328,12 +328,12 @@ std::string generateNextConfigurationProposal(std::string currentconfiguration,
 	// 4. NUM_DIMS_DEPENDENT
 	// 5. GLOB_seen_configurations
          string bestConfig;
-	 if (optimizeforEXEC == 1){
-	   bestConfig = bestEXECconfiguration;}
+		if (optimizeforEXEC == 1){
+			bestConfig = bestEXECconfiguration;}
 
-	 if (optimizeforEDP == 1){
-	   bestConfig = bestEDPconfiguration;}
-        int nextValue = extractConfigPararm(bestConfig,currentlyExploringDim) + 1;  
+	 	if (optimizeforEDP == 1){
+	    	bestConfig = bestEDPconfiguration;}
+        int nextValue = extractConfigPararm(bestConfig,currentlyExploringDim);  
 	std::string nextconfiguration = currentconfiguration;
 	// Continue if proposed configuration is invalid or has been seen/checked before.
 	while (!validateConfiguration(nextconfiguration) ||
@@ -361,63 +361,63 @@ std::string generateNextConfigurationProposal(std::string currentconfiguration,
 			case 2: //ilblock (4)
 			if (nextValue<4){
 				nextValue++;
-				cout << "next Value: "<<nextValue<<"\n";
+				cout << "ilblock next Value: "<<nextValue<<"\n";
 				break;
 			}
 			
 			case 3: // dl1sets (9)
 			if (nextValue<9){
 				nextValue++;
-				cout << "next Value: "<<nextValue<<"\n";
+				cout << "dl1sets next Value: "<<nextValue<<"\n";
 				break;
 			}
 
 			case 4: // dl1assoc (3)
 			if (nextValue<9){
 				nextValue++;
-				cout << "next Value: "<<nextValue<<"\n";
+				cout << "dl1assoc next Value: "<<nextValue<<"\n";
 				break;
 			}
 
 			case 5: // il1sets (9)
 			if (nextValue<9){
 				nextValue++;
-				cout << "next Value: "<<nextValue<<"\n";
+				cout << "il1sets next Value: "<<nextValue<<"\n";
 				break;
 			}
 
 			case 6: // il1assoc (3)
 			if (nextValue<3){
 				nextValue++;
-				cout << "next Value: "<<nextValue<<"\n";
+				cout << "il1assoc next Value: "<<nextValue<<"\n";
 				break;
 			}
 
 			case 7: // ul1sets (10)
 			if (nextValue<10){
 				nextValue++;
-				cout << "next Value: "<<nextValue<<"\n";
+				cout << "ul1sets next Value: "<<nextValue<<"\n";
 				break;
 			}
 
 			case 8: // ul2block (4)
 			if (nextValue<4){
 				nextValue++;
-				cout << "next Value: "<<nextValue<<"\n";
+				cout << "ul2block next Value: "<<nextValue<<"\n";
 				break;
 			}
 
 			case 9: // ulsassoc (5)
 			if (nextValue<5){
 				nextValue++;
-				cout << "next Value: "<<nextValue<<"\n";
+				cout << "ulsassoc next Value: "<<nextValue<<"\n";
 				break;
 			}
 
 			case 10: // replacement Policy (3)
 			if (nextValue<3){
 				nextValue++;
-				cout << "next Value: "<<nextValue<<"\n";
+				cout << "replacement Policy next Value: "<<nextValue<<"\n";
 				break;
 			}
 
@@ -425,14 +425,14 @@ std::string generateNextConfigurationProposal(std::string currentconfiguration,
 			case 0: //width (4)
 			if (nextValue<4){
 				nextValue++;
-				cout << "next Value: "<<nextValue<<"\n";
+				cout << "width next Value: "<<nextValue<<"\n";
 				break;
 			}
 
 			case 1: //scheduling (2)
 			if (nextValue<2){
 				nextValue++;
-				cout << "next Value: "<<nextValue<<"\n";
+				cout << "scheduling next Value: "<<nextValue<<"\n";
 				break;
 			}
 
@@ -440,7 +440,7 @@ std::string generateNextConfigurationProposal(std::string currentconfiguration,
 			case 11: //fpwidth (4)
 			if (nextValue<4){
 				nextValue++;
-				cout << "next Value: "<<nextValue<<"\n";
+				cout << "fpwidth next Value: "<<nextValue<<"\n";
 				break;
 			}
 			
@@ -448,21 +448,21 @@ std::string generateNextConfigurationProposal(std::string currentconfiguration,
 			case 12: //brachSettings (5)
 			if (nextValue<5){
 				nextValue++;
-				cout << "next Value: "<<nextValue<<"\n";
+				cout << "brachSettings next Value: "<<nextValue<<"\n";
 				break;
 			}
 
 			case 13: //RAS (4)
 			if (nextValue<4){
 				nextValue++;
-				cout << "next Value: "<<nextValue<<"\n";
+				cout << "RAS next Value: "<<nextValue<<"\n";
 				break;
 			}
 
 			case 14: //btb (5)
 			if (nextValue<5){
 				nextValue++;
-				cout << "next Value: "<<nextValue<<"\n";
+				cout << "btb next Value: "<<nextValue<<"\n";
 				break;
 			}
 
@@ -604,7 +604,7 @@ std::string generateNextConfigurationProposal(std::string currentconfiguration,
 			isDSEComplete = true;
 
 		if (!validateConfiguration(nextconfiguration)){
-			cout<<"failed the valid test";
+			cout<<"failed the valid test\n";
 		}
 	}
 	return nextconfiguration;
