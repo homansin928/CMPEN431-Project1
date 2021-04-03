@@ -76,7 +76,7 @@ std::string generateCacheLatencyParams(string halfBackedConfig) {
 	int ul2_size=(ul2_block*ul2_set*ul2_assoc)/1024;
 
 	int dl1_latency, il1_latency, ul2_latency;
-	int dl1_latencySetting,il1_latencySetting, ul2_latencySetting；
+	int dl1_latencySetting,il1_latencySetting, ul2_latencySetting;
 	//implementing il1 size to il1 latency
 		switch (il1_size){
 			case 2:
@@ -222,14 +222,23 @@ std::string generateCacheLatencyParams(string halfBackedConfig) {
 	else{
 		ul2_latencySetting=0;
 	}
+	//converting int to string 
+	string str_dl1_latencySetting,str_il1_latencySetting,str_ul2_latencySetting;
+	stringstream s1,s2,s3;
+	s1<<dl1_latencySetting;
+	s1>>str_dl1_latencySetting;
+	s2<<il1_latencySetting;
+        s2>>str_il1_latencySetting;
+	s3<<ul2_latencySetting;
+        s3>>str_ul2_latencySetting;
 
-	latencySettings<<dl1_latencySetting<<" "<<il1_latencySetting<<" "<<ul2_latencySetting;
+	latencySettings=str_dl1_latencySetting + " " + str_il1_latencySetting + " " + str_ul2_latencySetting;
 
 	//
 	//YOUR CODE ENDS HERE
 	//
 
-	return latencySettings.str(); // need str
+	return latencySettings; // need str
 }
 
 /*
@@ -240,19 +249,19 @@ int validateConfiguration(std::string configuration) {
 	// FIXME - YOUR CODE HERE
 	int Array1[18];
 	//implmenting block size
-	int dl1_block=l1block[extractConfigPararm(halfBackedConfig, 2)];
-	int il1_block=l1block[extractConfigPararm(halfBackedConfig, 2)];
-	int ul2_block=ul2block[extractConfigPararm(halfBackedConfig, 8)];
+	int dl1_block=l1block[extractConfigPararm(configuration, 2)];
+	int il1_block=l1block[extractConfigPararm(configuration, 2)];
+	int ul2_block=ul2block[extractConfigPararm(configuration, 8)];
 
 	//implmenting set size
-	int dl1_set=dl1sets[extractConfigPararm(halfBackedConfig, 3)];
-	int il1_set=il1sets[extractConfigPararm(halfBackedConfig, 5)];
-	int ul2_set=ul2sets[extractConfigPararm(halfBackedConfig, 7)];
+	int dl1_set=dl1sets[extractConfigPararm(configuration, 3)];
+	int il1_set=il1sets[extractConfigPararm(configuration, 5)];
+	int ul2_set=ul2sets[extractConfigPararm(configuration, 7)];
 
 	//implementing assoc
-	int dl1_assoc=dl1assoc[extractConfigPararm(halfBackedConfig, 4)];
-	int il1_assoc=il1assoc[extractConfigPararm(halfBackedConfig, 6)]; 
-	int ul2_assoc=ul2assoc[extractConfigPararm(halfBackedConfig, 9)];
+	int dl1_assoc=dl1assoc[extractConfigPararm(configuration, 4)];
+	int il1_assoc=il1assoc[extractConfigPararm(configuration, 6)]; 
+	int ul2_assoc=ul2assoc[extractConfigPararm(configuration, 9)];
 
 	//implementing cach size(((block*set*assoc)/1024) unit KB)
 	int dl1_size=(dl1_block*dl1_set*dl1_assoc)/1024;
@@ -287,7 +296,7 @@ int validateConfiguration(std::string configuration) {
 	
 	//constraint 4:ul2 size: Minimum = 32 KB; Maximum = 1 MB
 	if ((ul2_size<32)||(ul2_size>1024)){
-		return 0
+	  return 0;
 	}
 
 
@@ -318,7 +327,13 @@ std::string generateNextConfigurationProposal(std::string currentconfiguration,
 	// 3. NUM_DIMS
 	// 4. NUM_DIMS_DEPENDENT
 	// 5. GLOB_seen_configurations
+         string bestConfig;
+	 if (optimizeforEXEC == 1){
+	   bestConfig = bestEXECconfiguration;}
 
+	 if (optimizeforEDP == 1){
+	   bestConfig = bestEDPconfiguration;}
+        int nextValue = extractConfigPararm(bestConfig,currentlyExploringDim) + 1;  
 	std::string nextconfiguration = currentconfiguration;
 	// Continue if proposed configuration is invalid or has been seen/checked before.
 	while (!validateConfiguration(nextconfiguration) ||
@@ -332,12 +347,6 @@ std::string generateNextConfigurationProposal(std::string currentconfiguration,
 
 		std::stringstream ss;
 
-		string bestConfig;
-		if (optimizeforEXEC == 1)
-			bestConfig = bestEXECconfiguration;
-
-		if (optimizeforEDP == 1)
-			bestConfig = bestEDPconfiguration;
 
 		// Fill in the dimensions already-scanned with the already-selected best
 		// value.
@@ -345,7 +354,7 @@ std::string generateNextConfigurationProposal(std::string currentconfiguration,
 			ss << extractConfigPararm(bestConfig, dim) << " ";
 		}
 
-		int nextValue = extractConfigPararm(bestConfig,currentlyExploringDim) + 1;
+	
 		
 		switch(currentlyExploringDim){
 			//Cache cases
@@ -353,63 +362,63 @@ std::string generateNextConfigurationProposal(std::string currentconfiguration,
 			if (nextValue<4){
 				nextValue++;
 				cout << "next Value: "<<nextValue<<"\n";
-				break
+				break;
 			}
 			
 			case 3: // dl1sets (9)
 			if (nextValue<9){
 				nextValue++;
 				cout << "next Value: "<<nextValue<<"\n";
-				break
+				break;
 			}
 
 			case 4: // dl1assoc (3)
 			if (nextValue<9){
 				nextValue++;
 				cout << "next Value: "<<nextValue<<"\n";
-				break
+				break;
 			}
 
 			case 5: // il1sets (9)
 			if (nextValue<9){
 				nextValue++;
 				cout << "next Value: "<<nextValue<<"\n";
-				break
+				break;
 			}
 
 			case 6: // il1assoc (3)
 			if (nextValue<3){
 				nextValue++;
 				cout << "next Value: "<<nextValue<<"\n";
-				break
+				break;
 			}
 
 			case 7: // ul1sets (10)
 			if (nextValue<10){
 				nextValue++;
 				cout << "next Value: "<<nextValue<<"\n";
-				break
+				break;
 			}
 
 			case 8: // ul2block (4)
 			if (nextValue<4){
 				nextValue++;
 				cout << "next Value: "<<nextValue<<"\n";
-				break
+				break;
 			}
 
 			case 9: // ulsassoc (5)
 			if (nextValue<5){
 				nextValue++;
 				cout << "next Value: "<<nextValue<<"\n";
-				break
+				break;
 			}
 
 			case 10: // replacement Policy (3)
 			if (nextValue<3){
 				nextValue++;
 				cout << "next Value: "<<nextValue<<"\n";
-				break
+				break;
 			}
 
 			//Core
@@ -417,14 +426,14 @@ std::string generateNextConfigurationProposal(std::string currentconfiguration,
 			if (nextValue<4){
 				nextValue++;
 				cout << "next Value: "<<nextValue<<"\n";
-				break
+				break;
 			}
 
 			case 1: //scheduling (2)
 			if (nextValue<2){
 				nextValue++;
 				cout << "next Value: "<<nextValue<<"\n";
-				break
+				break;
 			}
 
 			//FPU
@@ -432,7 +441,7 @@ std::string generateNextConfigurationProposal(std::string currentconfiguration,
 			if (nextValue<4){
 				nextValue++;
 				cout << "next Value: "<<nextValue<<"\n";
-				break
+				break;
 			}
 			
 			//BP
@@ -440,27 +449,27 @@ std::string generateNextConfigurationProposal(std::string currentconfiguration,
 			if (nextValue<5){
 				nextValue++;
 				cout << "next Value: "<<nextValue<<"\n";
-				break
+				break;
 			}
 
 			case 13: //RAS (4)
 			if (nextValue<4){
 				nextValue++;
 				cout << "next Value: "<<nextValue<<"\n";
-				break
+				break;
 			}
 
 			case 14: //btb (5)
 			if (nextValue<5){
 				nextValue++;
 				cout << "next Value: "<<nextValue<<"\n";
-				break
+				break;
 			}
 
 			default:
 			nextValue=nextValue;
 			cout << "next Value: "<<nextValue<<"\n";
-			break
+			break;
 		}// end of switch 1
 
 
@@ -496,96 +505,96 @@ std::string generateNextConfigurationProposal(std::string currentconfiguration,
 			//starting wich Cache
 			case 2: // exploring l1block 
 				cout << "exploring l1block\n";
-				currentlyExploringDim =3
-				currentDimDone=flase;
-				break
+				currentlyExploringDim =3;
+				currentDimDone=false;
+				break;
 			
 			case 3: // exploring d1sets 
 				cout << "exploring d1sets\n";
-				currentlyExploringDim =4
-				currentDimDone=flase;
-				break
+				currentlyExploringDim =4;
+				currentDimDone=false;
+				break;
 
 			case 4: // exploring dl1assoc 
 				cout << "exploring d1assoc\n";
-				currentlyExploringDim =5
-				currentDimDone=flase;
-				break
+				currentlyExploringDim =5;
+				currentDimDone=false;
+				break;
 
 			case 5: // exploring il1sets
 				cout << "exploring il1sets\n";
-				currentlyExploringDim =6
-				currentDimDone=flase;
-				break
+				currentlyExploringDim =6;
+				currentDimDone=false;
+				break;
 			
 			case 6: // exploring il1assoc 
 				cout << "exploring il1assoc\n";
-				currentlyExploringDim =7
-				currentDimDone=flase;
-				break
+				currentlyExploringDim =7;
+				currentDimDone=false;
+				break;
 
 			case 7: // exploring ul2sets
 				cout << "exploring ul2sets\n";
-				currentlyExploringDim =8
-				currentDimDone=flase;
-				break	
+				currentlyExploringDim =8;
+				currentDimDone=false;
+				break;	
 
 			case 8: // exploring ul2block
 				cout << "exploring ul2block\n";
-				currentlyExploringDim =9
-				currentDimDone=flase;
-				break	
+				currentlyExploringDim =9;
+				currentDimDone=false;
+				break;	
 
 			case 9: // exploring ul2assoc 
 				cout << "exploring ul2assoc\n";
-				currentlyExploringDim =10
-				currentDimDone=flase;
-				break
+				currentlyExploringDim =10;
+				currentDimDone=false;
+				break;
 			
 			case 10: // exploring replace policy
 				cout << "exploring replace policy\n";
-				currentlyExploringDim =0
-				currentDimDone=flase;
-				break
-
+				currentlyExploringDim =0;
+				currentDimDone=false;
+				break;
+		      
 			// exploring core
 			case 0: // exploring width
 				cout << "exploring witdh\n";
-				currentlyExploringDim =1
-				currentDimDone=flase;
-				break
+				currentlyExploringDim =1;
+				currentDimDone=false;
+				break;
 			
 			case 1: // exploring scheduling 
 				cout << "exploring scheduling\n";
-				currentlyExploringDim =1
-				currentDimDone=flase;
-				break
+				currentlyExploringDim =11;
+				currentDimDone=false;
+				break;
 			
 			//exploring FPU
 			case 11: // exploring fpwidth
 				cout << "exploring fpwidth\n";
-				currentlyExploringDim =12
-				currentDimDone=flase;
-				break
+				currentlyExploringDim =12;
+				currentDimDone=false;
+				break;
 			//exploring BP
 			case 12: // exploring branchsettings
 				cout << "exploring branchsettings\n";
-				currentlyExploringDim =13
-				currentDimDone=flase;
-				break
+				currentlyExploringDim =13;
+				currentDimDone=false;
+				break;
 			case 13: // exploring ras 
 				cout << "exploring ras\n";
-				currentlyExploringDim =14
-				currentDimDone=flase;
-				break
+				currentlyExploringDim =14;
+				currentDimDone=false;
+				break;
 			case 14: // exploring btb 
 				cout << "exploring btb\n";
-				currentDimDone=flase;
+				currentDimDone=false;
 				isDSEComplete=true;
-				break
+				break;
 			default:
 				currentDimDone=false;
-				brake
+				break;
 			}//end of switch2
 		} //end of if (currentDimDone)
 
