@@ -1,0 +1,267 @@
+Testing baseline: Iter # 0 config: 0 0 0 5 0 5 0 2 2 2 0 1 0 1 2 2 2 5 : found in file
+Starting DSE
+
+ilblock next Value: 1
+Iter # 0 config: 0 0 1 5 0 5 0 2 2 2 0 1 0 1 2 3 3 5 : found in file
+             proposedGeoEDP=9.74109e-08, bestEDP=9.74109e-08, proposedGeoTime=0.000324578, bestTime=0.000324578
+
+ilblock next Value: 1
+ilblock next Value: 2
+Iter # 1 config: 0 0 2 5 0 5 0 2 2 2 0 1 0 1 2 4 4 5 : found in file
+             proposedGeoEDP=8.78504e-08, bestEDP=8.78504e-08, proposedGeoTime=0.000301001, bestTime=0.000301001
+
+ilblock next Value: 1
+ilblock next Value: 2
+ilblock next Value: 3
+failed the valid test
+ilblock next Value: 4
+exploring l1block
+failed the valid test
+dl1sets next Value: 4
+Iter # 2 config: 0 0 2 4 0 5 0 2 2 2 0 1 0 1 2 3 4 5 : found in file
+             proposedGeoEDP=8.20498e-08, bestEDP=8.20498e-08, proposedGeoTime=0.000292009, bestTime=0.000292009
+
+dl1sets next Value: 1
+Iter # 3 config: 0 0 2 1 0 5 0 2 2 2 0 1 0 1 2 0 4 5 : found in file
+             proposedGeoEDP=7.76741e-08, bestEDP=7.76741e-08, proposedGeoTime=0.000282901, bestTime=0.000282901
+
+dl1sets next Value: 1
+dl1sets next Value: 2
+Iter # 4 config: 0 0 2 2 0 5 0 2 2 2 0 1 0 1 2 1 4 5 : found in file
+             proposedGeoEDP=7.60813e-08, bestEDP=7.60813e-08, proposedGeoTime=0.000280568, bestTime=0.000280568
+
+dl1sets next Value: 1
+dl1sets next Value: 2
+dl1sets next Value: 3
+Iter # 5 config: 0 0 2 3 0 5 0 2 2 2 0 1 0 1 2 2 4 5 : found in file
+             proposedGeoEDP=7.7335e-08, bestEDP=7.60813e-08, proposedGeoTime=0.000283643, bestTime=0.000280568
+
+dl1sets next Value: 1
+dl1sets next Value: 2
+dl1sets next Value: 3
+dl1sets next Value: 4
+dl1sets next Value: 5
+dl1sets next Value: 6
+Iter # 6 config: 0 0 2 6 0 5 0 2 2 2 0 1 0 1 2 5 4 5 : found in file
+             proposedGeoEDP=9.44019e-08, bestEDP=7.60813e-08, proposedGeoTime=0.000309932, bestTime=0.000280568
+
+dl1sets next Value: 1
+dl1sets next Value: 2
+dl1sets next Value: 3
+dl1sets next Value: 4
+dl1sets next Value: 5
+dl1sets next Value: 6
+dl1sets next Value: 7
+failed the valid test
+dl1sets next Value: 8
+failed the valid test
+dl1sets next Value: 9
+exploring d1sets
+failed the valid test
+dl1assoc next Value: 9
+exploring d1assoc
+Iter # 7 config: 0 0 2 2 2 5 0 2 2 2 0 1 0 1 2 5 4 5 : found in file
+             proposedGeoEDP=9.04872e-08, bestEDP=7.60813e-08, proposedGeoTime=0.000309901, bestTime=0.000280568
+
+il1sets next Value: 1
+Iter # 8 config: 0 0 2 2 0 1 0 2 2 2 0 1 0 1 2 1 0 5 : found in file
+             proposedGeoEDP=1.10366e-07, bestEDP=7.60813e-08, proposedGeoTime=0.0003553, bestTime=0.000280568
+
+il1sets next Value: 1
+il1sets next Value: 2
+Iter # 9 config: 0 0 2 2 0 2 0 2 2 2 0 1 0 1 2 1 1 5 : found in file
+             proposedGeoEDP=1.03417e-07, bestEDP=7.60813e-08, proposedGeoTime=0.000343795, bestTime=0.000280568
+
+il1sets next Value: 1
+il1sets next Value: 2
+il1sets next Value: 3
+Iter # 10 config: 0 0 2 2 0 3 0 2 2 2 0 1 0 1 2 1 2 5 : found in file
+             proposedGeoEDP=8.96929e-08, bestEDP=7.60813e-08, proposedGeoTime=0.000319807, bestTime=0.000280568
+
+il1sets next Value: 1
+il1sets next Value: 2
+il1sets next Value: 3
+il1sets next Value: 4
+Iter # 11 config: 0 0 2 2 0 4 0 2 2 2 0 1 0 1 2 1 3 5 : found in file
+             proposedGeoEDP=8.1981e-08, bestEDP=7.60813e-08, proposedGeoTime=0.000300025, bestTime=0.000280568
+
+il1sets next Value: 1
+il1sets next Value: 2
+il1sets next Value: 3
+il1sets next Value: 4
+il1sets next Value: 5
+il1sets next Value: 6
+Iter # 12 config: 0 0 2 2 0 6 0 2 2 2 0 1 0 1 2 1 5 5 : found in file
+             proposedGeoEDP=7.8904e-08, bestEDP=7.60813e-08, proposedGeoTime=0.000275617, bestTime=0.000275617
+
+il1sets next Value: 1
+il1sets next Value: 2
+il1sets next Value: 3
+il1sets next Value: 4
+il1sets next Value: 5
+il1sets next Value: 6
+il1sets next Value: 7
+failed the valid test
+il1sets next Value: 8
+failed the valid test
+il1sets next Value: 9
+exploring il1sets
+failed the valid test
+ul1sets next Value: 9
+exploring il1assoc
+failed the valid test
+ul1sets next Value: 3
+Iter # 13 config: 0 0 2 2 0 5 0 3 2 2 0 1 0 1 2 1 4 6 : found in file
+             proposedGeoEDP=7.68203e-08, bestEDP=7.60813e-08, proposedGeoTime=0.000281882, bestTime=0.000275617
+
+ul1sets next Value: 1
+Iter # 14 config: 0 0 2 2 0 5 0 1 2 2 0 1 0 1 2 1 4 4 : found in file
+             proposedGeoEDP=7.5264e-08, bestEDP=7.5264e-08, proposedGeoTime=0.000279251, bestTime=0.000275617
+
+ul1sets next Value: 1
+ul1sets next Value: 2
+ul1sets next Value: 3
+ul1sets next Value: 4
+Iter # 15 config: 0 0 2 2 0 5 0 4 2 2 0 1 0 1 2 1 4 7 : found in file
+             proposedGeoEDP=7.82231e-08, bestEDP=7.5264e-08, proposedGeoTime=0.000283192, bestTime=0.000275617
+
+ul1sets next Value: 1
+ul1sets next Value: 2
+ul1sets next Value: 3
+ul1sets next Value: 4
+ul1sets next Value: 5
+failed the valid test
+ul1sets next Value: 6
+failed the valid test
+ul1sets next Value: 7
+failed the valid test
+ul1sets next Value: 8
+failed the valid test
+ul1sets next Value: 9
+failed the valid test
+ul1sets next Value: 10
+exploring ul2sets
+failed the valid test
+next Value: 9
+exploring ul2block
+Iter # 16 config: 0 0 2 2 0 5 0 1 3 2 0 1 0 1 2 1 4 5 : found in file
+             proposedGeoEDP=6.70654e-08, bestEDP=6.70654e-08, proposedGeoTime=0.000275521, bestTime=0.000275521
+
+ulsassoc next Value: 1
+Iter # 17 config: 0 0 2 2 0 5 0 1 3 1 0 1 0 1 2 1 4 3 : found in file
+             proposedGeoEDP=6.53736e-08, bestEDP=6.53736e-08, proposedGeoTime=0.000272531, bestTime=0.000272531
+
+ulsassoc next Value: 1
+ulsassoc next Value: 2
+ulsassoc next Value: 3
+Iter # 18 config: 0 0 2 2 0 5 0 1 3 3 0 1 0 1 2 1 4 7 : found in file
+             proposedGeoEDP=6.89825e-08, bestEDP=6.53736e-08, proposedGeoTime=0.000278508, bestTime=0.000272531
+
+ulsassoc next Value: 1
+ulsassoc next Value: 2
+ulsassoc next Value: 3
+ulsassoc next Value: 4
+Iter # 19 config: 0 0 2 2 0 5 0 1 3 4 0 1 0 1 2 1 4 9 : found in file
+             proposedGeoEDP=7.15404e-08, bestEDP=6.53736e-08, proposedGeoTime=0.000281481, bestTime=0.000272531
+
+ulsassoc next Value: 1
+ulsassoc next Value: 2
+ulsassoc next Value: 3
+ulsassoc next Value: 4
+ulsassoc next Value: 5
+exploring ul2assoc
+brachSettings next Value: 5
+exploring replace policy
+Iter # 20 config: 0 0 2 2 0 5 0 1 3 1 2 1 0 1 2 1 4 3 : found in file
+             proposedGeoEDP=6.54382e-08, bestEDP=6.53736e-08, proposedGeoTime=0.000272674, bestTime=0.000272531
+
+width next Value: 1
+Iter # 21 config: 1 0 2 2 0 5 0 1 3 1 0 1 0 1 2 1 4 3 : found in file
+             proposedGeoEDP=7.88417e-08, bestEDP=6.53736e-08, proposedGeoTime=0.000301043, bestTime=0.000272531
+
+width next Value: 1
+width next Value: 2
+Iter # 22 config: 2 0 2 2 0 5 0 1 3 1 0 1 0 1 2 1 4 3 : found in file
+             proposedGeoEDP=1.01575e-07, bestEDP=6.53736e-08, proposedGeoTime=0.000340457, bestTime=0.000272531
+
+width next Value: 1
+width next Value: 2
+width next Value: 3
+failed the valid test
+width next Value: 4
+exploring witdh
+failed the valid test
+fpwidth next Value: 4
+exploring scheduling
+Iter # 23 config: 0 1 2 2 0 5 0 1 3 1 0 1 0 1 2 1 4 3 : found in file
+             proposedGeoEDP=7.30308e-08, bestEDP=6.53736e-08, proposedGeoTime=0.00027939, bestTime=0.000272531
+
+fpwidth next Value: 1
+fpwidth next Value: 2
+Iter # 24 config: 0 0 2 2 0 5 0 1 3 1 0 2 0 1 2 1 4 3 : found in file
+             proposedGeoEDP=7.5212e-08, bestEDP=6.53736e-08, proposedGeoTime=0.000297306, bestTime=0.000272531
+
+fpwidth next Value: 1
+fpwidth next Value: 2
+fpwidth next Value: 3
+Iter # 25 config: 0 0 2 2 0 5 0 1 3 1 0 3 0 1 2 1 4 3 : found in file
+             proposedGeoEDP=9.68479e-08, bestEDP=6.53736e-08, proposedGeoTime=0.000346857, bestTime=0.000272531
+
+fpwidth next Value: 1
+fpwidth next Value: 2
+fpwidth next Value: 3
+fpwidth next Value: 4
+exploring fpwidth
+brachSettings next Value: 4
+Iter # 26 config: 0 0 2 2 0 5 0 1 3 1 0 1 4 1 2 1 4 3 : found in file
+             proposedGeoEDP=4.14769e-08, bestEDP=4.14769e-08, proposedGeoTime=0.00020715, bestTime=0.00020715
+
+brachSettings next Value: 1
+Iter # 27 config: 0 0 2 2 0 5 0 1 3 1 0 1 1 1 2 1 4 3 : found in file
+             proposedGeoEDP=4.19153e-08, bestEDP=4.14769e-08, proposedGeoTime=0.000208433, bestTime=0.00020715
+
+brachSettings next Value: 1
+brachSettings next Value: 2
+Iter # 28 config: 0 0 2 2 0 5 0 1 3 1 0 1 2 1 2 1 4 3 : found in file
+             proposedGeoEDP=4.22161e-08, bestEDP=4.14769e-08, proposedGeoTime=0.000209329, bestTime=0.00020715
+
+brachSettings next Value: 1
+brachSettings next Value: 2
+brachSettings next Value: 3
+Iter # 29 config: 0 0 2 2 0 5 0 1 3 1 0 1 3 1 2 1 4 3 : found in file
+             proposedGeoEDP=4.37315e-08, bestEDP=4.14769e-08, proposedGeoTime=0.000213726, bestTime=0.00020715
+
+brachSettings next Value: 1
+brachSettings next Value: 2
+brachSettings next Value: 3
+brachSettings next Value: 4
+brachSettings next Value: 5
+exploring branchsettings
+btb next Value: 5
+exploring ras
+Iter # 30 config: 0 0 2 2 0 5 0 1 3 1 0 1 4 3 2 1 4 3 : found in file
+             proposedGeoEDP=4.12573e-08, bestEDP=4.12573e-08, proposedGeoTime=0.000206508, bestTime=0.000206508
+
+btb next Value: 1
+Iter # 31 config: 0 0 2 2 0 5 0 1 3 1 0 1 4 3 1 1 4 3 : found in file
+             proposedGeoEDP=4.12596e-08, bestEDP=4.12573e-08, proposedGeoTime=0.000206516, bestTime=0.000206508
+
+btb next Value: 1
+btb next Value: 2
+btb next Value: 3
+Iter # 32 config: 0 0 2 2 0 5 0 1 3 1 0 1 4 3 3 1 4 3 : found in file
+             proposedGeoEDP=4.12572e-08, bestEDP=4.12572e-08, proposedGeoTime=0.000206508, bestTime=0.000206508
+
+btb next Value: 1
+btb next Value: 2
+btb next Value: 3
+btb next Value: 4
+Iter # 33 config: 0 0 2 2 0 5 0 1 3 1 0 1 4 3 4 1 4 3 : found in file
+             proposedGeoEDP=4.13216e-08, bestEDP=4.12572e-08, proposedGeoTime=0.000206706, bestTime=0.000206508
+
+btb next Value: 1
+btb next Value: 2
+btb next Value: 3
+btb next Value: 4
+btb next Value: 5
+exploring btb
