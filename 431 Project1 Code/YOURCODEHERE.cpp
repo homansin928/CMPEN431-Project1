@@ -333,7 +333,7 @@ std::string generateNextConfigurationProposal(std::string currentconfiguration,
 
 	 	if (optimizeforEDP == 1){
 	    	bestConfig = bestEDPconfiguration;}
-        int nextValue = extractConfigPararm(bestConfig,currentlyExploringDim);  
+		int nextValue = 0;
 	std::string nextconfiguration = currentconfiguration;
 	// Continue if proposed configuration is invalid or has been seen/checked before.
 	while (!validateConfiguration(nextconfiguration) ||
